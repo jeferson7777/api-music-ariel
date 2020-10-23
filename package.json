@@ -1,0 +1,9 @@
+{
+  "name": "api-music-ariel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ArielisGT/api-music-ariel.git",
+  "author": "Arielis <aetumasonis@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
