@@ -5,5 +5,23 @@
   "repository": "git@github.com:ArielisGT/api-music-ariel.git",
   "author": "Arielis <aetumasonis@gmail.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "workspaces":[
+    "server"
+  ],
+  "scripts": {
+    "start": "yarn nodemon ./index.js",
+    "seed": "node ./data/seed.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.6",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
 }
