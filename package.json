@@ -6,6 +6,9 @@
   "author": "Arielis <aetumasonis@gmail.com>",
   "license": "MIT",
   "private": true,
+  "workspaces":[
+    "server"
+  ],
   "scripts": {
     "start": "yarn nodemon ./index.js",
     "seed": "node ./data/seed.js"
