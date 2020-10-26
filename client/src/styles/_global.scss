@@ -1,0 +1,25 @@
+
+* {
+  box-sizing: border-box;
+}
+html, body {
+  font-size: 100%;
+  padding: 1rem;
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+picture {
+  display: block;
+}
+.main-info {
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  background-color: lightgray;
+} 
