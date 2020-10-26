@@ -1,37 +1,49 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getMusicData } from './getMusic.js';
-
+import Header from '../components/header.js';
+import SearchMusic from './search-music.js';
+import MusicItem from './music-item.js';
 function App() {
-  const [music, setMusic] = useState([]);
+  const [music, setMusic] = useState('');
+  const [musicData, setMusicData] = useState([]);
+ 
+
 
   const handleChange = (event) => {
     const { value } = event.currentTarget;
-    setMusic(getMusicData);
+    console.log(value);
+    setMusic(value);
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(song);
+
   };
+  const fetchMusicData = async () => {
+    const data = await getMusicData();
+    console.log(data);
+    setMusicData(data);
+  }
+  useEffect(async () => {
+    await fetchMusicData();
+  }, []);
 
   return (
     <>
-      <h1>Music app</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="song">Song</label>
-        <input
-          type="search"
-          id="song"
-          placeholder="Search song"
-          name="song"
-          onChange={handleChange}
-        />
-        <button type="submit">Search</button>
-      </form>
+      <Header />
+      <SearchMusic
+        handleSubmit={handleSubmit}
+        handleChange={handleChange}
+       // musicItem={MusicItem}
+      />
+      {<section>
+          {musicData.map((musicItem) => (
+            <MusicItem key={musicItem.title} music={musicItem} />
+          ))}
+        </section>
+      }
     </>
   );
 }
 
 export default App;
-
-

@@ -6,11 +6,13 @@ import mongoose from 'mongoose';
 import httpLoggerMiddleware from './middleware/logger-middleware.js';
 import jsonResponseMiddleware from './middleware/json-response.js';
 import errorHandlerMiddleware from './middleware/error-handler.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import musicRouter from './routes/music.js';
 
-const HOST = '127.0.0.1';
-const PORT = 5000;
+const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 5000;
 export const databaseURI = 'mongodb://localhost/mongoose-intro';
 // const databaseURI = 'mongodb://localhost:2700/mongoose-intro
 
